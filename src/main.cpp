@@ -1,7 +1,7 @@
 // Copyright 2021 GHA Test Team
 #include <iostream>
 #include <string>
-#include "generateText.h"
+#include "textgen.h"
 
 int main() {
     TextGenerator t = TextGenerator("Text.txt", 2);

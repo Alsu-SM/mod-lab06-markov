@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include <sstream>
 #include <string>
-#include "generateText.h"
+#include "textgen.h"
 
 TEST(task1, test1) {
     TextGenerator tg = TextGenerator("Text.txt", 2);

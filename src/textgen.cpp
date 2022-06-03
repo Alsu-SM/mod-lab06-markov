@@ -10,7 +10,7 @@
 
 
 
-TextGenerator::prefix TextGenerator::GetPref(int ind) {
+TextGen::prefix TextGen::GetPref(int ind) {
     prefix temporaryPrefix;
     for (int j = 0; j < NPREF; j++) {
         temporaryPrefix.push_back(temporary[ind + j]);
@@ -18,7 +18,7 @@ TextGenerator::prefix TextGenerator::GetPref(int ind) {
     return temporaryPrefix;
 }
 
-std::vector<std::string> TextGenerator::ChooseSuffix(prefix pref) {
+std::vector<std::string> TextGen::ChooseSuffix(prefix pref) {
     std::vector<std::string> suffix;
     for (int i = 0; i < temporary.size() - NPREF; i++) {
         int temporarySum = 0;
@@ -36,7 +36,7 @@ std::vector<std::string> TextGenerator::ChooseSuffix(prefix pref) {
     }
     return suffix;
 }
-TextGenerator::TextGenerator(std::string FileAddress, int Prefix_Length) {
+TextGen::TextGen(std::string FileAddress, int Prefix_Length) {
     ReadSourceFile(FileAddress);
     for (int i = 0; i < temporary.size() - NPREF; i++) {
         prefix temporaryPrefix = GetPref(i);
@@ -51,14 +51,14 @@ TextGenerator::TextGenerator(std::string FileAddress, int Prefix_Length) {
     }
 }
 
-std::string TextGenerator::ChooseAnySuffix(TextGenerator::prefix pref) {
+std::string TextGen::ChooseAnySuffix(TextGen::prefix pref) {
     std::string result;
 
     result = statetab.at(pref)[rand() % statetab.at(pref).size()];
     return result;
 }
 
-void TextGenerator::ReadSourceFile(std::string pathToSourceText) {
+void TextGen::ReadSourceFile(std::string pathToSourceText) {
     std::ifstream infile(pathToSourceText);
     std::string word;
     while (infile >> word) {
@@ -66,7 +66,7 @@ void TextGenerator::ReadSourceFile(std::string pathToSourceText) {
     }
 }
 
-std::string TextGenerator::CreateText(int wordcount) {
+std::string TextGen::CreateText(int wordcount) {
     std::string outputStr;
 
     int count = 0;

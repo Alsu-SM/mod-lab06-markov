@@ -15,7 +15,7 @@ std::string ChooseAnySuffix(TextGen::prefix pref);
 std::vector<std::string> temporary;
 std::string CreateText(int wordcount);
 std::map<prefix, std::vector<std::string> > statetab;
-TextGen(std::string pathToSourceFile, int prefixLength);
+TextGenerator(std::string pathToSourceFile, int prefixLength);
 void ReadSourceFile(std::string pathToSourceText);
 prefix GetPref(int i);
 };

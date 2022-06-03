@@ -6,7 +6,7 @@
 #include <deque>
 #include <map>
 #include <algorithm>
-#include "generateText.h"
+#include "textgen.h"
 
 
 
